@@ -224,6 +224,7 @@ ul {
 .grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
 }
 
@@ -491,11 +492,13 @@ ul {
 }
 
 .branch-card__link {
+  flex: 1;
   padding: 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
