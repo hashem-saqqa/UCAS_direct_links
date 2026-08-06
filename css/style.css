@@ -618,6 +618,12 @@ ul {
   color: #cdd6e6;
 }
 
+.bottom-bar__credit {
+  font-size: 0.68rem;
+  color: #7f8ba8;
+  margin-top: 2px;
+}
+
 .bottom-bar__tagline {
   color: var(--green);
   font-weight: 800;
@@ -817,5 +823,279 @@ ul {
   .major-card__action {
     margin-inline-start: 0;
     justify-content: center;
+  }
+}
+
+/* ===== Esdad payment guide page ===== */
+
+.esdad-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+
+.esdad-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 22px;
+}
+
+.esdad-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.esdad-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 8px;
+}
+
+.esdad-header p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.esdad-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.esdad-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.esdad-tab:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.esdad-tab__icon {
+  display: flex;
+  width: 20px;
+  height: 20px;
+}
+
+.esdad-tab__icon .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.esdad-tab.is-active[data-accent="blue"] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  box-shadow: var(--shadow-hover);
+}
+
+.esdad-tab.is-active[data-accent="green"] {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+  box-shadow: var(--shadow-hover);
+}
+
+.esdad-tab.is-active[data-accent="orange"] {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+  box-shadow: var(--shadow-hover);
+}
+
+.esdad-swipe-hint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 6px 0 26px;
+}
+
+.esdad-panels {
+  position: relative;
+}
+
+.esdad-panel {
+  display: none;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid transparent;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.esdad-panel.is-active {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 30px;
+  animation: esdad-fade 0.25s ease;
+}
+
+@keyframes esdad-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.esdad-panel[data-accent="blue"] {
+  border-top-color: var(--blue);
+}
+
+.esdad-panel[data-accent="green"] {
+  border-top-color: var(--green);
+}
+
+.esdad-panel[data-accent="orange"] {
+  border-top-color: var(--orange);
+}
+
+.esdad-panel__steps h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 18px;
+}
+
+.esdad-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  counter-reset: esdad-step;
+}
+
+.esdad-steps li {
+  position: relative;
+  padding-inline-start: 40px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text);
+  counter-increment: esdad-step;
+}
+
+.esdad-steps li::before {
+  content: counter(esdad-step);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--blue-bg);
+  color: var(--blue);
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.esdad-panel[data-accent="green"] .esdad-steps li::before {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.esdad-panel[data-accent="orange"] .esdad-steps li::before {
+  background: var(--orange-bg);
+  color: var(--orange);
+}
+
+.esdad-panel__media {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.esdad-panel__media img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.esdad-video {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.esdad-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.esdad-panel__soon {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--muted);
+}
+
+.esdad-panel__soon .icon {
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.esdad-panel__soon h2 {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin: 6px 0;
+}
+
+.esdad-panel__soon p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .esdad-panel.is-active {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .esdad-tab {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+  .esdad-panel {
+    padding: 20px;
   }
 }
