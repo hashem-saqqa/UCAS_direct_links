@@ -1103,4 +1103,7 @@ ul {
   .esdad-panel {
     padding: 20px;
   }
+  .esdad-video--full {
+    padding-top: 100%;
+  }
 }
