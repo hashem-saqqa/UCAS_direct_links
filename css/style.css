@@ -1053,6 +1053,11 @@ ul {
   box-shadow: var(--shadow);
 }
 
+.esdad-video--full {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+}
+
 .esdad-video iframe {
   position: absolute;
   inset: 0;
