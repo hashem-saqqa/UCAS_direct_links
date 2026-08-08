@@ -174,8 +174,18 @@ ul {
 .site-header {
   padding: 32px 0 26px;
   text-align: center;
-  background: linear-gradient(135deg, var(--blue-bg) 0%, var(--bg) 45%, var(--green-bg) 100%);
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 20%, #fff) 0%, #fff 50%, color-mix(in srgb, var(--green) 20%, #fff) 100%);
+  box-shadow: 0 2px 14px rgba(15, 98, 172, 0.1);
+  position: relative;
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
 }
 
 .logo-wrap {
@@ -545,12 +555,26 @@ ul {
 }
 
 .map-link {
-  display: block;
-  text-align: center;
-  margin-top: 14px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  margin: 18px auto 0;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1.5px solid var(--blue);
+  background: var(--blue-bg);
   font-weight: 700;
   color: var(--blue);
   font-size: 0.9rem;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.map-link:hover {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
 }
 
 /* ===== Help note ===== */
@@ -579,21 +603,16 @@ ul {
 /* ===== Bottom bar ===== */
 
 .bottom-bar {
-  margin: 40px auto 24px;
-  padding: 0 20px;
-  max-width: var(--max-width);
-}
-
-.bottom-bar .container {
-  max-width: none;
-  margin: 0;
+  margin-top: 40px;
+  padding: 24px 0;
   background: var(--navy-dark);
   color: #fff;
-  border-radius: 24px;
+}
+
+.bottom-bar__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 28px;
   flex-wrap: wrap;
   gap: 14px;
 }
